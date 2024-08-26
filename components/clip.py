@@ -50,6 +50,7 @@ class DareClipMerger:
         Returns:
         """
         device = get_device()
+        print("[{}] seed in use: {}".format(self.__class__.__name__, str(seed)))
         
         if clear_cache and torch.cuda.is_available():
             torch.cuda.empty_cache()

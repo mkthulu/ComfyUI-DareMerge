@@ -168,6 +168,8 @@ class MaskEdit:
         Returns:
             Tuple[ModelMask]: A tuple containing the mask.
         """
+
+        print("[{}] seed in use: {}".format(self.__class__.__name__, str(seed)))
         
         keys = list(mask.state_dict.keys())
         collected_targets = collect_layers(layers, keys)
@@ -240,6 +242,9 @@ class SimpleMasker:
         Returns:
             Tuple[ModelPatcher]: A tuple containing the mask.
         """
+        
+        print("[{}] seed in use: {}".format(self.__class__.__name__, str(seed)))
+
         model_sd = model.model_state_dict()
 
         mm = ModelMask({})
@@ -301,6 +306,8 @@ class QuadMasker:
         Returns:
             Tuple[ModelPatcher]: A tuple containing the mask.
         """
+
+        print("[{}] seed in use: {}".format(self.__class__.__name__, str(seed)))
 
         model_sd = model.model_state_dict()
         mask_count = 4

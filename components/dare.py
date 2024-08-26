@@ -135,6 +135,7 @@ class DareUnetMergerGradient:
         """
 
         device = get_device()
+        print("[{}] seed in use: {}".format(self.__class__.__name__, str(seed)))
 
         if seed is not None:
             torch.manual_seed(seed)

@@ -62,6 +62,8 @@ class ModelNoiseInjector:
             Tuple[ModelPatcher]: A tuple containing the modified ModelPatcher instance.
         """
 
+        print("[{}] seed in use: {}".format(self.__class__.__name__, str(seed)))
+
         device = get_device()
         
         m = model.clone()  # Clone model_a to keep its structure
